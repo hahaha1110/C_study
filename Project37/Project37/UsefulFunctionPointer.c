@@ -31,7 +31,7 @@ int main(void)
 	int jungkookAge = 23;
 	int first;
 
-	//
+	// 한글 주석을 쓰면 아래 내용 한글이 안깨지는데 주석문을 빼면 한글이 깨져서 나옴..;;;뭐지..
 	printf("입장순서 1 \n");
 	first = WhoIsFirst(jungmoAge, jungkookAge, OlderFirst);
 	printf("%d세와 %d세 중 %d세가 먼저 입장! \n\n", jungmoAge, jungkookAge, first);
