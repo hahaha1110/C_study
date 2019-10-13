@@ -39,5 +39,6 @@ int main(void)
 	first = WhoIsFirst(jungmoAge, jungkookAge, YoungerFirst);
 	printf("%d技客 %d技 吝 %d技啊 刚历 涝厘! \n\n", jungmoAge, jungkookAge, first);
 
+
 	return 0;
 }
