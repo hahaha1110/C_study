@@ -31,6 +31,7 @@ int main(void)
 	int jungkookAge = 23;
 	int first;
 
+	// 한글이 왜깨지지..
 	printf("입장순서 1 \n");
 	first = WhoIsFirst(jungmoAge, jungkookAge, OlderFirst);
 	printf("%d세와 %d세 중 %d세가 먼저 입장! \n\n", jungmoAge, jungkookAge, first);
