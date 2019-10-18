@@ -3,4 +3,8 @@
 
 .vs
 /Debug
-
+.Project45
+.vcxproj.filters
+.filters
+.vcxproj.user
+.user

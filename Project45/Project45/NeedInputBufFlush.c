@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void ClearLineFronReadBuffer(void)
+{
+	while (getchar() != '\n');
+}
+
 int main(void)
 {
 	char perID[7];
@@ -7,10 +12,11 @@ int main(void)
 
 	fputs("주민번호 앞 6자리 입력 : ", stdout);
 	fgets(perID, sizeof(perID), stdin);
+	ClearLineFronReadBuffer(); // 입력버퍼 비우기
 
 	fputs("이름입력:",stdout);
 	fgets(name, sizeof(name), stdin);
-
+	
 	printf("주민번호: %s \n", perID);
 	printf("이름: %s \n", name);
 
