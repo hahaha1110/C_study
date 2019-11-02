@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int main(void) {
-	FILE * src = fopen("IMG_20190808_195455.jpg", "rb");
-	FILE * des = fopen("jkCopy.jpg", "wb");
+void BinaryFileCopy(void) {
+	FILE * src = fopen("1527690995872.jpg", "rb");
+	FILE * des = fopen("jsCopy.jpg", "wb");
 	char buf[20];
 	int readCnt;
 
@@ -29,6 +29,52 @@ int main(void) {
 	}
 	fclose(src);
 	fclose(des);
+}
+
+void ComplexFileWite(void) {
+	char name[10];
+	char sex;
+	int age;
+
+	FILE * fp = fopen("friend.txt", "wt");
+	int i;
+
+	for (i = 0; i < 3; i++)
+	{
+		printf("이름 성별 나이 순 입력 :");
+		scanf("%s %c %d",name, &sex, &age);
+		getchar(); // 버퍼에 남아있는 \n의 소멸을 위해서
+		fprintf(fp, "%s %c %d", name, sex, age);
+	}
+	fclose(fp);
+	
+}
+
+void ComplexFileRead(void) {
+	char name[10];
+	char sex;
+	int age;
+
+	FILE * fp = fopen("friend.txt", "rt");
+	int ret;
+
+	while (1)
+	{
+		ret = fscanf(fp, "%s %c %d", name, &sex, &age);
+		if (ret == EOF)
+			break;
+		printf("%s %c %d \n", name, sex, age);
+	}
+	fclose(fp);
+}
+
+int main(void) {
+	// 바이너리 파일의 복사
+	//BinaryFileCopy();
+
+	// 텍스트데이터와 바이너리 데이터 동시에 입출력
+	//ComplexFileWite(); // 입력
+	ComplexFileRead(); // 출력
 
 	return 0;
 }
