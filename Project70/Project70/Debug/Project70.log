@@ -1,0 +1,7 @@
+﻿  소스.c
+c:\users\ha\source\repos\project70\project70\소스.c(7): warning C4098: 'FileOpen': 'void' 함수에서 값을 반환하고 있습니다.
+c:\users\ha\source\repos\project70\project70\소스.c(4): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+c:\users\ha\source\repos\project70\project70\소스.c(19): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\stdio.h(208): note: 'fopen' 선언을 참조하십시오.
+  Project70.vcxproj -> C:\Users\ha\source\repos\Project70\Debug\Project70.exe
