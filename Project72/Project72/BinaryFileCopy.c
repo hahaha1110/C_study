@@ -68,13 +68,44 @@ void ComplexFileRead(void) {
 	fclose(fp);
 }
 
+void StructFileWireRead(void) {
+	// 구조체 변수를 하나의 바이너리 데이터로 인식하고 처리하기. 그러면 fwrite함수를 통해서 통째로 저장하고 fread 함수를 통해서 통째로 복원가능
+	typedef struct minam {
+		char name[10];
+		char sex;
+		int age;
+	}Minam;
+
+	FILE * fp;
+	Minam myMinam1;
+	Minam myMinam2;
+
+	/** file write **/
+	fp = fopen("Minam.bin", "wb");
+	printf("이름 성별 나이 입력 \n");
+	scanf("%s %c %d", myMinam1.name, &(myMinam1.sex), &(myMinam1.age));
+	fwrite((void*)&myMinam1, sizeof(myMinam1), 1, fp);
+	fclose(fp);
+
+	/* file read */
+	fp = fopen("Minam.bin", "rb");
+	fread((void*)&myMinam2, sizeof(myMinam2), 1, fp);
+
+	printf("%s %c %d \n", myMinam2.name, myMinam2.sex, myMinam2.age);
+	fclose(fp);
+
+}
+
 int main(void) {
 	// 바이너리 파일의 복사
 	//BinaryFileCopy();
 
 	// 텍스트데이터와 바이너리 데이터 동시에 입출력
 	//ComplexFileWite(); // 입력
-	ComplexFileRead(); // 출력
+	//ComplexFileRead(); // 출력
+
+	// 텍스트와 바이너리 데이터의 집합체인 구조체 변수의 입출력
+	StructFileWireRead();
 
 	return 0;
 }
